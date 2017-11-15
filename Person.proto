@@ -1,0 +1,28 @@
+syntax = "proto3";
+option java_package = "com.example.tutorial";
+option java_outer_classname = "PersonProtos";
+message Person{
+    string name = 1;
+    int32 age = 2;
+    
+    enum DeviceType{
+        IOS = 0;
+        Android = 1;
+        WP = 2;
+    }
+    DeviceType deviceType = 3;
+    
+    message Result{
+        string url = 1;
+        string title = 2;
+    }
+    
+    repeated Result results = 4;
+    repeated Animal animals = 5;
+}
+
+message Animal{
+    float weight = 1;
+    double price = 2;
+    string name = 3;
+}
